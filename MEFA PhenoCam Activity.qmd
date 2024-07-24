@@ -132,7 +132,11 @@ View(GR_sites)
 **Challenge**: Can you subset the sitelist_table by a different primary vegetation type? How about by a different variable (table column)? Use the code cell below.
 
 ```{r}
+# Create a subset of only evergreen needleleaf sites 
+EN_sites <- subset(sitelist_table, primary_veg_type == "EN")  
 
+# View the first few grassland entries and entire table
+View(EN_sites)
 ```
 
 #### Create a Map of the PhenoCam Sites
@@ -363,7 +367,7 @@ Next, we'll download some photos from your chosen site. Images are typically tak
 
 ```{r}
 # Download PhenoCam images
-download_midday_images(site = site_name,
+download_midday_images(site = "NEON.D16.WREF.DP1.00033",
                        y = year, 
                        months = 1:12, 
                        days = 15,
